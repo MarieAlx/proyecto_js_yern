@@ -169,6 +169,9 @@ const actualizarTotal = (contenedor) => {
 
 let finalizarBtn = document.getElementById("finalizar");
 finalizarBtn.onclick=()=>{
+	if (carrito.length === 0) {
+		return; // Si el carrito está vacío, no hace nada
+	}
     carrito = [];
     localStorage.removeItem("carrito");
     mostrarCarrito();
